@@ -1,0 +1,119 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  background-color: black;
+  color: #ff0072;
+}
+
+h1 {
+  margin: 20px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 10px;
+  margin: 20px auto;
+  max-width: 850px;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-back {
+  width: 100%;
+  height: 100%;
+  background-color: #f772ae;
+  font-size: 10em;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card.flipped img {
+  display: block;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+button {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7em 2em;
+  border: 3px solid #ff0072;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #ff0072;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+button:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: #ff0072;
+  z-index: -1;
+}
+
+button:hover,
+button:focus {
+  color: rgb(14, 13, 13);
+}
+
+button:hover:before,
+button:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+button:active {
+  transform: scale(0.9);
+}
